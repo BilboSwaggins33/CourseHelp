@@ -86,7 +86,7 @@ export default function EditProfile({ user, exit }) {
                 <View style={styles.header}>
                     <Text style={styles.title} color='black'>
                         Edit Profile
-                </Text>
+                    </Text>
                 </View>
                 <Image
                     style={styles.profileImage}
@@ -139,7 +139,7 @@ export default function EditProfile({ user, exit }) {
                         </View >
                     </View>
                 </View>
-                <Button onPress={async() => { await uploadData(); exit(); }} mode="text" color='#003152' labelStyle={{ fontWeight: 'normal', fontSize: 15, color: 'black' }} >Save</Button>
+                <Button onPress={async () => { await uploadData(); exit(); }} mode="text" color='#003152' labelStyle={{ fontWeight: 'normal', fontSize: 15, color: 'black' }} >Save</Button>
 
             </ScrollView>
             <Provider>
@@ -159,7 +159,7 @@ export default function EditProfile({ user, exit }) {
                             ))}
 
                             <Dialog.Actions>
-                                <Button color='#003152' labelStyle={{ fontWeight: 'bold', fontSize: 15, color: 'black' }} onPress={() => { setQuery('') }, hideDialog}>Done</Button>
+                                <Button color='#003152' labelStyle={{ fontWeight: 'bold', fontSize: 15, color: 'black' }} onPress={() => { setQuery(''), hideDialog }}>Done</Button>
                             </Dialog.Actions>
                         </Dialog.Content>
                     </Dialog>
@@ -171,7 +171,7 @@ export default function EditProfile({ user, exit }) {
                                 <Button mode="text" contentStyle={{ padding: 10 }} color='#003152' labelStyle={{ fontWeight: 'normal', fontSize: 10, color: 'black' }} style={{ borderColor: '#dcdde1', borderWidth: 1 }}>{grade}</Button>
                             </TouchableOpacity>
                             {showGrade && <>{grades.map(grade =>
-                                <Button key={grade} color='#003152' labelStyle={{ fontWeight: 'normal', fontSize: 10, color: 'black' }} style={styles.selector} mode="text" color="black" onPress={() => { setGrade(grade); setShowGrade(false) }}>{grade}</Button>
+                                <Button key={grade} color='#003152' labelStyle={{ fontWeight: 'normal', fontSize: 10, color: 'black' }} style={styles.selector} mode="text" onPress={() => { setGrade(grade); setShowGrade(false) }}>{grade}</Button>
                             )}</>}
                             <Dialog.Actions>
                                 <Button color='#003152' labelStyle={{ fontWeight: 'bold', fontSize: 15, color: 'black' }} onPress={() => setSelectGrade(false)}>Done</Button>
